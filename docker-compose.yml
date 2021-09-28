@@ -1,0 +1,39 @@
+---
+
+version: '3.7'
+services:
+  php:
+    #build: ./php-fpm
+    build: ./php
+    ports:
+    - 8080:8000
+    volumes:
+    - ./work:/work
+  
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "8025:8025"
+      - "1025:1025"
+
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=pass
+      - MYSQL_DATABASE=reserve_db
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mysql
+      - PMA_USER=root
+      - PMA_PASSWORD=pass
+    links:
+      - mysql
+    ports:
+      - 4040:80
+    volumes:
+      - ./phpmyadmin/sessions:/sessions

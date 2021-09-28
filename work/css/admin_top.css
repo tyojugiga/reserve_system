@@ -1,0 +1,611 @@
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  flex-grow: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+}
+
+header {
+  margin: 0;
+  padding: 25px 0 25px 0;
+  width: 100%;
+  height: 50px;
+  flex-grow: 0;
+  background: #F29C50;
+  display: flex;
+}
+
+header.spw {
+  margin: 0;
+  padding: 25px 0 20px 0;
+  width: 100%;
+  height: 50px;
+  flex-grow: 0;
+  background: #F29C50;
+  display: flex;
+}
+
+.sp_menu {
+  margin: 0;
+  margin-left: 30px;
+  display: flex;
+  flex-flow: row wrap;
+  width: 50px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.sp_menu span {
+  margin: 0 auto;
+  display: block;
+}
+
+.sp_menu_title {
+  font-size: 15px;
+}
+
+#open {
+  font-size: 35px;
+}
+
+.sp_overlay {
+  margin: 0;
+  padding: 20px;
+  position: fixed;
+  top: 95px;
+  bottom: auto;
+  right: auto;
+  left: 0;
+  background: white;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+  z-index: 3;
+}
+
+.sp_overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sp_overlay #close {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.sp_overlay ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sp_overlay li {
+  width: 180px;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-align: left;
+}
+
+.sp_overlay a {
+  text-decoration: none;
+  color: black;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  cursor:pointer;
+}
+
+.logbox {
+  display: block;
+  margin: 0;
+  margin-left: auto;
+  padding: 0;
+  padding-top: 10px;
+  width: 400px;
+  text-align: center;
+}
+
+.logbox span {
+  margin: 0;
+  margin-right: 10px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.logout {
+  padding: 10px;
+  background: #FF6928;
+  font-size: 15px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+}
+
+.left_menu {
+  margin: 0;
+  padding: 0;
+  width: 180px;
+  height: 100%;
+  flex-grow: 0;
+  background: #DDDDDD;
+}
+
+.left_menu ul {
+  margin: 0;
+  padding: 10px;
+  list-style-type: none;
+}
+
+.li_menu {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.left_menu a,
+.kokyaku{
+  margin: 0;
+  font-size: 15px;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.li_menu span,
+.kokyaku.ac_arrow {
+  vertical-align: -3px;
+  transform: rotate(0);
+  transition-duration: .5s;
+}
+
+.ac_content {
+  height: 0;
+  transition-duration: .5s;
+  overflow: hidden;
+  border: hidden;
+  text-align: left;
+}
+
+.ac_content a {
+  font-size: 15px;
+}
+
+.ac_content span {
+  font-size: 15px;
+}
+
+.ac_bottom {
+  margin-bottom: 20px;
+}
+
+.ac_arrow.is_active {
+  transform: rotate(180deg);
+  transition-duration: .5s;
+}
+
+.ac_content.is_active {
+  height: 30px;
+  transition-duration: .5s;
+}
+
+.right_contents {
+  margin: 0;
+  padding: 30px;
+  box-sizing: border-box;
+  flex-grow: 1;
+  height: 100%;
+  background: white;
+}
+
+.right_contents h1 {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.right_contents input[type="text"],
+.right_contents input[type="password"] {
+  margin: 0;
+  padding: 5px;
+  font-size: 18px;
+}
+
+.right_contents .spw input[type="text"] {
+  margin: 0;
+  padding: 5px;
+  font-size: 15px;
+}
+
+.right_contents input[type="submit"],
+.back,
+.alert_window input[type="submit"],
+.alert_window a,
+.scedit,
+.cancel,
+.delete {
+  margin: 8px;
+  padding: 5px 8px;
+  cursor: pointer;
+  background: none;
+  background: #FF6928;
+  font-size: 18px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.ten input[type="submit"] {
+  background: #005FFF;
+}
+
+.hstry input[type="submit"] {
+  background: #00CC66;
+}
+
+.edit input[type="submit"] {
+  background: #FF4F02;
+}
+
+.del input[type="submit"],
+.del2 {
+  background: red;
+}
+
+.search_form {
+  margin: 50px 0;
+}
+
+.search_form p {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+}
+
+.spw td {
+  font-size: 14px;
+}
+
+.search_result {
+  margin: 0;
+  margin-bottom: 50px;
+  padding: 0;
+}
+
+.sc {
+  margin: 0;
+  margin-top: 50px;
+  padding: 0;
+}
+
+.search_result td,
+.sc td {
+  margin: 0;
+  padding: 0 8px;
+  border: solid 1px black;
+  text-align: center;
+  font-size: 12px;
+}
+
+.sc td {
+  width: 38px;
+}
+
+.search_result thead td,
+.sc thead td{
+  background: #F29C50;
+  color: white;
+}
+
+.search_result tbody td,
+.sc tbody td{
+  background: white;
+  color: black;
+}
+
+.search_result tbody .gray td,
+.sc tbody .gray td{
+  background: #EEEEEE;
+}
+
+.error {
+  color: red;
+}
+
+.alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: black;
+  opacity: 0.2;
+  z-index: 100;
+}
+
+.alert_window {
+  margin: 0;
+  padding: 50px 20px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 30%;
+  left: 40%;
+  width: 400px;
+  height: 200px;
+  background: white;
+  z-index: 101;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.alert_window.spw {
+  top: 35%;
+  left: 12%;
+  width: 300px;
+  height: 200px;
+  background: white;
+  z-index: 101;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.alert_window p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 20px;
+}
+
+.alert_window a {
+  display: block;
+  margin: 20px auto;
+  width: 80px;
+  text-align: center;
+}
+
+.add_sc {
+  display: inline;
+}
+
+.add_sc select {
+  font-size: 20px;
+}
+
+.sc label {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.batu {
+  color: red;
+}
+
+div.batu {
+  margin: 0;
+  padding: 0;
+  background: none;
+  color: red;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.maru {
+  color: blue;
+}
+
+input[type="submit"].maru,
+div.maru {
+  margin: 0;
+  padding: 0;
+  background: none;
+  color: blue;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.kome {
+  color: green;
+}
+
+input[type="submit"].kome,
+div.kome {
+  margin: 0;
+  padding: 0;
+  background: none;
+  color: green;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.idinfo {
+  display: none;
+}
+
+.scedit {
+  width: 180px;
+  background: #FF6928;
+  text-align: center;
+}
+
+.nodis {
+  display: none;
+}
+
+.cancel {
+  width: 100px;
+  display: inline-block;
+  text-align: center;
+}
+
+.alert_window.spw input[type="submit"],
+.alert_window.spw .cancel {
+  font-size: 12px;
+}
+
+.alert_window.spw .cancel {
+  width: 80px;
+}
+
+.no_scroll {
+  overflow: hidden;
+}
+
+.delete_window form {
+  display: inline-block;
+}
+
+.res tbody td:hover,
+element {
+  background: #99CCFF;
+}
+
+.history {
+  width: 70px;
+}
+
+
+.calender {
+  margin: 30px 0;
+  padding: 0;
+}
+
+.calender table {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  border-collapse: collapse;
+  color: black;
+  display: block;
+}
+
+.calender thead {
+  background: #F29C50;
+  border: solid 1px #A9A9A9;
+}
+
+.calender th,
+.calender td {
+  margin: 0;
+  padding: 0;
+  width: 40px;
+  height: 30px;
+  text-align: center;
+  position: relative;
+}
+
+.calender.spw th,
+.calender.spw td {
+  width: 28px;
+}
+
+.calender th {
+  height: 30px;
+}
+
+.calender td {
+  border: solid 1px #A9A9A9;
+  padding: 15px 10px;
+}
+
+.sunday {
+  color: red;
+}
+
+.saturday {
+  color: blue;
+}
+
+.today {
+  background: #FFDBC9;
+  font-weight: bold;
+}
+
+input[type="submit"].arrow {
+  width: 25px;
+  background: #FF6928;
+  border-radius: 5px;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+input[type="submit"].arrow:hover,
+input[type="submit"].arrow:active {
+  background: #00aaa7;
+}
+
+.calender .back {
+  margin: 10px 0;
+  padding: 5px;
+  width: 120px;
+  background: #FF6928;
+  color: white;
+  border-radius: 5px;
+  display: block;
+  cursor: pointer;
+  text-align: center;
+  font-size: 15px;
+}
+
+.calender .back:hover {
+  background: #00aaa7;
+}
+
+.day {
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.day input[type="submit"] {
+  margin: 0;
+  padding: 0;
+  background: none;
+  color: black;
+}
+
+.sunday input[type="submit"] {
+  color: red;
+}
+
+.saturday input[type="submit"] {
+  color: blue;
+}
+
+.disabled input[type="submit"] {
+  color: gray;
+  cursor: initial;
+}
+
+.yotei {
+  color: white;
+  background: #0066FF;
+  text-align: center;
+  font-size: 10px;
+  border-radius: 2px;
+}
