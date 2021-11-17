@@ -182,8 +182,13 @@ function today ($d,$t,$m,$tm,$y,$ty) {
 }
 
 function passedDay ($d,$t,$m,$tm,$y,$ty) {
+
+  $a = (int)$tm + 1;
+  $b = (string)$a;
+
   if (($d <= $t && $m === $tm && $y === $ty) ||
-      (($m < $tm || $m-$tm > 1) && $y === $ty) ||
+      (($m < $tm || $m > $b) && $y === $ty) ||
+      ($y > $ty && ($tm !== '12' || ($tm === '12' && $m !== '1'))) ||
       $y < $ty) {
     return "disabled";
   } else {

@@ -102,11 +102,13 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         "DELETE FROM
           reservation_table
         WHERE
-         month < :month
+         month < :month &&
+         year <= :year
         "
       );
 
       $stmt->bindValue(':month', date("n"));
+      $stmt->bindValue(':year', date("Y"));
       $stmt->execute();
 
       $pdo->commit();
@@ -226,6 +228,9 @@ $stmt = $pdo->prepare(
     year = :year &&
     month = :month"
 );
+
+$year = date("Y");
+$month = date("n");
 
 $stmt->bindParam(':year', $year, PDO::PARAM_INT);
 $stmt->bindParam(':month', $month, PDO::PARAM_INT);
