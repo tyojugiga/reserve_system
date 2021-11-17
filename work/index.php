@@ -30,5 +30,7 @@ $_SESSION['username'] = "";
   <input type="submit" name="login" value="ログイン" class="login">
 </form>
 
+<a href="add_new_user.php">新規登録はこちら</a>
+
 </body>
 </html>
